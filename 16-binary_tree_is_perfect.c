@@ -10,7 +10,6 @@
  * which is the maximum depth (number of levels) of the tree.
  * If the tree is empty (NULL), the function returns -1.
  */
-
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	int left_height, right_height;
@@ -25,8 +24,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 			+ 1 : right_height + 1);
 }
 
-
-
 /**
  * binary_tree_is_full - checks if a binary tree is full
  * @tree: pointer to the root node of the tree to check
@@ -37,8 +34,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
  * which means every node in the tree has either zero or two children.
  * If the tree is empty (NULL), the function returns 0.
  */
-
-
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 	if (!tree)
@@ -48,13 +43,11 @@ int binary_tree_is_full(const binary_tree_t *tree)
 		return (1);
 
 	if (tree->left && tree->right)
-		return (binary_tree_is_full(tree->left) &&
-				binary_tree_is_full(tree->right));
+		return (binary_tree_is_full(tree->left)
+				&& binary_tree_is_full(tree->right));
 
 	return (0);
 }
-
-
 
 /**
  * binary_tree_is_perfect - checks if a binary tree is perfect
@@ -63,10 +56,10 @@ int binary_tree_is_full(const binary_tree_t *tree)
  * Return: 1 if the tree is perfect, 0 otherwise or if tree is NULL
  *
  * Description: This function checks if a binary tree is perfect,
- * which means all levels of the tree are fully filled.
- * If the tree is empty (NULL), the function returns 0.
+ * which means all levels of the tree are fully filled, and the tree
+ * is also a full binary tree. If the tree is empty (NULL), the function
+ * returns 0.
  */
-
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int left_height, right_height;
